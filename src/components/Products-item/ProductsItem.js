@@ -1,14 +1,17 @@
-function ProductsItem() {
+function ProductsItem(props) {
+  var {product, index} = props
+  var statusName = product.status ? 'Còn Hàng': 'Hết Hàng';
+  var statusClass = product.status ? 'status-item-available' : 'status-item-out';
   return (
     <tr>
-      <td className="App">1</td>
-      <td className="App">MSP1</td>
-      <td className="App">Iphone</td>
-      <td className="App">Apple</td>
-      <td className="App">500 Đ</td>
+      <td className="App">{index + 1}</td>
+      <td className="App">{product.code}</td>
+      <td className="App">{product.name}</td>
+      <td className="App">{product.desc}</td>
+      <td className="App">{product.price}</td>
       <td className="App" style={{ paddingLeft: "30px", paddingRight: "30px" }}>
-        <div className="status-item-available">
-          <span>Còn hàng</span>
+        <div className={statusClass}>
+          <span>{statusName}</span>
         </div>
       </td>
       <td>

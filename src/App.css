@@ -42,7 +42,9 @@
 .mt-10 {
   margin-top: 10px;
 }
-th, td, table {
+th,
+td,
+table {
   border: solid 1px #ddd;
 }
 .stt {
@@ -71,17 +73,14 @@ th, td, table {
   justify-content: center;
 }
 .status-item-available {
-  background-color: #46B829;
+  background-color: #46b829;
   color: white;
   padding: 4px;
   border-radius: 4px;
 }
 .status-item-out {
-  background-color: #858A83;
+  background-color: #858a83;
   color: white;
   padding: 4px;
   border-radius: 4px;
-}
-.panel-heading {
-  
 }

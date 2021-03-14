@@ -1,17 +1,27 @@
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/Menu/Menu"
-import ProductsList from "./components/Products-list/ProductsList"
+import routes from './routes'
+
 function App() {
+  const showContentMenus = (routes) => {
+    var result = null;
+    if(routes.length > 0) {
+      result = routes.map((item, index) => {
+        return <Route key={index} path={item.path} exact={item.exact} component={item.main}/>
+      })
+    }
+    return <Switch>{result}</Switch>
+  }
   return (
-    <div>
-      <Menu />
-      <div className="container">
-        <button type="button" className="btn btn-warning">
-          <i className="fas fa-plus mr-2"></i>Thêm sản phẩm
-        </button>
-        <ProductsList />
+    <Router>
+      <div>
+        <Menu />
+        <div className="container">
+          {showContentMenus(routes)}
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 

@@ -1,5 +1,5 @@
-import ProductsItem from "../Products-item/ProductsItem";
-function ProductList() {
+
+function ProductList(props) {
   return (
     <div className="panel  panel-primary mt-10">
       <div className="panel-heading App">
@@ -19,9 +19,7 @@ function ProductList() {
             </tr>
           </thead>
           <tbody>
-            <ProductsItem />
-            <ProductsItem />
-            <ProductsItem />
+            {props.children}
           </tbody>
         </table>
       </div>
